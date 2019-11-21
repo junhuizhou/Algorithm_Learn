@@ -5,7 +5,7 @@
 
 ### 编译规范
 
-1. 编译CW文件生成可执行文件 gcc name.c -o name.o
+1. 编译C文件生成可执行文件 gcc name.c -o name.o(win10中使用name.exe)
 
 ### setting.json配置
 
@@ -30,4 +30,16 @@
     },
     "files.autoGuessEncoding": true
 }
+```
+### 计算运行时间
+```C
+    #include <time.h> //linux为us级，win10中为ms级
+    int main()
+    {
+        clock_t begin,end;
+        begin = clock();
+        end = clock();
+        printf("time of this code is %lf ms\n",(double)(end-begin)/CLOCKS_PER_SEC*1000);
+        return 0;
+    }    
 ```
