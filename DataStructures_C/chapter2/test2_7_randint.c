@@ -2,9 +2,9 @@
  * @Author: junhuizhou
  * @Date: 2019-11-21 20:00:56
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-21 20:58:50
+ * @LastEditTime: 2019-11-22 20:46:41
  * @Description: header
- * @FilePath: \DataStructures_C\chapter2\test2_7.c
+ * @FilePath: \DataStructures_C\chapter2\test2_7_randint.c
  */
 
 /*test2_7 生成前N个自然数的一个随机置换*/
@@ -13,13 +13,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-int RandInt(int min, int max)
+int randInt(int min, int max)
 {
     srand((int)time(0));
     return rand()%(max-min+1) + min;
 }
 
-void Swap(int* a, int* b)
+void swap(int* a, int* b)
 {
     int tmp;
     tmp = *a;
@@ -42,7 +42,7 @@ int main()
     // 再将所有数打乱
     for(i=1; i<num; i++)
     {
-        Swap(&A[i], &A[RandInt(0, i)]);
+        swap(&A[i], &A[randInt(0, i)]);
     }    
     end = clock();
     printf("time of this code is %lf ms\n",(double)(end-begin)/CLOCKS_PER_SEC*1000);

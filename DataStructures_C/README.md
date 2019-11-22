@@ -32,6 +32,7 @@
 }
 ```
 ### 计算运行时间
+
 ```C
     #include <time.h> //linux为us级，win10中为ms级
     int main()
@@ -43,3 +44,7 @@
         return 0;
     }    
 ```
+
+### 命名规范
+
+[Google C/C++命名规范](https://www.cnblogs.com/chensheng-zhou/p/5127415.html)
