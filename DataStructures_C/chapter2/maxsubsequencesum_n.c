@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-21 10:31:17
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-22 20:58:46
+ * @LastEditTime: 2019-11-23 16:27:10
  * @Description: header
  * @FilePath: \DataStructures_C\chapter2\maxsubsequencesum.c
  */
@@ -122,7 +122,7 @@ int maxSubsequenceSum3(const int a[], int n)
 }
 
 /**
- * @description: 最大序列和，fig2_8，保证左边不为负即可获得局部最优解，用maxsum进行各局部比较，似乎叫联机算法
+ * @description: 最大序列和，fig2_8，保证左边不为负即可获得局部最优解，用maxsum进行各局部比较，似乎叫联机算法/在线处理/动态规划
  * @param {type} 
  * @return: 
  */

@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-21 21:17:48
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-22 20:46:53
+ * @LastEditTime: 2019-11-23 21:34:42
  * @Description: header
  * @FilePath: \DataStructures_C\chapter2\test2_9_pown.c
  */
@@ -16,7 +16,7 @@ long int powN(long int x, unsigned int n)
     {
         return 1;
     }
-    if((n&1) == 0)  // 和1“与”之后为0则是偶数，为1则是奇数
+    if((n&1) == 0)  // &1 == %2，&n == %(n+1)
     {
         return powN(x*x, n/2);
     }
