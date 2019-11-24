@@ -47,4 +47,7 @@
 
 ### 命名规范
 
-[Google C/C++命名规范](https://www.cnblogs.com/chensheng-zhou/p/5127415.html)
+[Google C/C++开源风格](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/)
+
+个人改动：
+1. 函数命名，单个单词的名字首字母大写，多个单词的名字首单词小写
