@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 21:19:40
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-24 22:04:51
+ * @LastEditTime: 2019-11-26 21:58:03
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\stacklist.c
  */
@@ -42,7 +42,7 @@ Stack createStack(void)
  */
 void makeEmpty(Stack stack)
 {
-    if(stack != NULL)
+    if(stack == NULL)
     {
         printf("Must use creeatStack first");
     }
