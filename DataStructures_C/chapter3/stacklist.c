@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 21:19:40
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-26 21:58:03
+ * @LastEditTime: 2019-11-28 17:15:39
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\stacklist.c
  */
@@ -28,7 +28,8 @@ Stack createStack(void)
     stack = malloc(sizeof(struct Node));
     if(stack == NULL)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
+        exit(1);
     }
     stack->next = NULL;
     makeEmpty(stack);
@@ -44,7 +45,8 @@ void makeEmpty(Stack stack)
 {
     if(stack == NULL)
     {
-        printf("Must use creeatStack first");
+        printf("Must use creeatStack first\n");
+        return;
     }
     else
     {
@@ -67,7 +69,8 @@ void Push(ElementType x, Stack stack)
     tmpcell = malloc(sizeof(struct Node));
     if(tmpcell == NULL)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
+        exit(1);
     }
     else
     {
@@ -85,7 +88,7 @@ ElementType Top(Stack stack)
     }
     else
     {
-        printf("Empty stack");
+        printf("Empty stack\n");
         return 0;
     }
 }
@@ -95,7 +98,7 @@ void Pop(Stack stack)
     PtrToNode firstcell;
     if(isEmpty(stack))
     {
-        printf("Empty stack");
+        printf("Empty stack\n");
     }
     else
     {

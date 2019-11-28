@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 17:21:32
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-24 20:42:59
+ * @LastEditTime: 2019-11-28 17:18:07
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\cursor.c
  */
@@ -56,7 +56,8 @@ List makeEmpty(List list)
     list = cursorAlloc();
     if(list == 0)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
+        exit(1);
     }
     cursorspace[list].next = 0;
 }
@@ -112,7 +113,8 @@ void Insert(ElementType x, List list, Position position)
     tmpcell = cursorAlloc();
     if(tmpcell == 0)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
+        exit(1);
     }
     cursorspace[tmpcell].element = x;
     cursorspace[tmpcell].next = cursorspace[position].next;

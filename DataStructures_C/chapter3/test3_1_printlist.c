@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-27 14:21:53
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-27 18:58:21
+ * @LastEditTime: 2019-11-28 16:09:22
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\test3_1_printlist.c
  */
@@ -68,6 +68,23 @@ void printList(List list)
     printf("\n");  
 }
 
+void deleteList(List list)
+{
+    if(list == NULL)
+    {
+        printf("Use creatList first");
+    }
+    Position p, tmp;
+    p = list->next;
+    list->next = NULL;
+    while(p != NULL)
+    {
+        tmp = p->next;
+        free(p);
+        p = tmp;
+    }
+}
+
 int main()
 {
     List list;
@@ -77,5 +94,6 @@ int main()
         Insert(list,i);
     }
     printList(list);
+    deleteList(list);
     return 0;
 }

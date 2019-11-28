@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-27 16:46:22
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-27 17:25:49
+ * @LastEditTime: 2019-11-28 16:11:07
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\test3_2_printlots.c
  */
@@ -91,6 +91,23 @@ void printLots(List l, List p)
     printf("\n");
 }
 
+void deleteList(List list)
+{
+    if(list == NULL)
+    {
+        printf("Use creatList first");
+    }
+    Position p, tmp;
+    p = list->next;
+    list->next = NULL;
+    while(p != NULL)
+    {
+        tmp = p->next;
+        free(p);
+        p = tmp;
+    }
+}
+
 int main()
 {
     #define n 10
@@ -109,5 +126,7 @@ int main()
     printList(list1);
     printList(list2);
     printLots(list1, list2);
+    deleteList(list1);
+    deleteList(list2);
     return 0;
 }

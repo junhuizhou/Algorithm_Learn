@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-26 21:18:38
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-26 22:46:28
+ * @LastEditTime: 2019-11-28 17:10:17
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\queuelist.c
  */
@@ -36,17 +36,20 @@ Queue createQueue(int maxelements)
     Queue queue;
     if(maxelements < MIN_QUEUE_SIZE)
     {
-        printf("Queue size is too small");
+        printf("Queue size is too small\n");
+        exit(1);
     }
     queue = malloc(sizeof(struct QueueRecord));
     if(queue == NULL)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
+        exit(1);
     }
     queue->front = malloc(sizeof(struct Node));
     if(queue->front == NULL)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
+        exit(1);
     }
     makeEmpty(queue);
     return queue;
@@ -56,7 +59,8 @@ void makeEmpty(Queue queue)
 {
     if(queue == NULL)
     {
-        printf("Use creatQueue first");
+        printf("Use creatQueue first\n");
+        return;
     }
     else
     {
@@ -95,7 +99,7 @@ ElementType Front(Queue queue)
 {
     if(isEmpty(queue))
     {
-        printf("Empty queue");
+        printf("Empty queue\n");
         return 0;
     }
     else
@@ -108,7 +112,8 @@ void Dequeue(Queue queue)
 {
     if(isEmpty(queue))
     {
-        printf("Empty queue");
+        printf("Empty queue\n");
+        return;
     }
     else
     {
@@ -122,13 +127,12 @@ void Dequeue(Queue queue)
         free(tmp);
         queue->size--;
     }
-    
 }
 ElementType frontAndDequeue(Queue queue)
 {
     if(isEmpty(queue))
     {
-        printf("Empty queue");
+        printf("Empty queue\n");
         return 0;
     }
     else
@@ -137,5 +141,4 @@ ElementType frontAndDequeue(Queue queue)
         Dequeue(queue);
         return tmp;
     }
-    
 }
