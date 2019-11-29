@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 11:12:01
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-28 16:08:01
+ * @LastEditTime: 2019-11-29 21:15:21
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\list.c
  */
@@ -74,7 +74,7 @@ Position findPrevious(ElementType x, List list)
     {
         p = p->next;
     }
-    
+    return p;    
 }
 
 void Insert(ElementType x, List list, Position position)

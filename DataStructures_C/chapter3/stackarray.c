@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 21:20:17
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-28 17:12:24
+ * @LastEditTime: 2019-11-29 21:59:00
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\stackarray.c
  */
@@ -113,5 +113,6 @@ ElementType topAndPop(Stack stack)
     else
     {
         printf("Empty stack\n");
+        return 0;
     }
 }
