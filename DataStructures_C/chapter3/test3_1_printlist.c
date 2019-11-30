@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-27 14:21:53
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-28 16:09:22
+ * @LastEditTime: 2019-11-30 14:56:36
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\test3_1_printlist.c
  */
@@ -72,7 +72,7 @@ void deleteList(List list)
 {
     if(list == NULL)
     {
-        printf("Use creatList first");
+        printf("Use creatList first\n");
     }
     Position p, tmp;
     p = list->next;

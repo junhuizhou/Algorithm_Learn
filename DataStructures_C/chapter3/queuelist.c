@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-26 21:18:38
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-28 17:10:17
+ * @LastEditTime: 2019-11-30 20:05:20
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\queuelist.c
  */
@@ -84,6 +84,7 @@ void disposeQueue(Queue queue)
     free(queue->front);
     free(queue);
 }
+
 void Enqueue(ElementType x, Queue queue)
 {
     QueueNode tmp;
@@ -128,6 +129,7 @@ void Dequeue(Queue queue)
         queue->size--;
     }
 }
+
 ElementType frontAndDequeue(Queue queue)
 {
     if(isEmpty(queue))

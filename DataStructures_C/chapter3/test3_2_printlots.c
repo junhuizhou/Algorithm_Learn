@@ -95,7 +95,7 @@ void deleteList(List list)
 {
     if(list == NULL)
     {
-        printf("Use creatList first");
+        printf("Use creatList first\n");
     }
     Position p, tmp;
     p = list->next;

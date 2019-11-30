@@ -1,10 +1,10 @@
 /*
  * @Author: junhuizhou
- * @Date: 2019-11-27 17:31:22
+ * @Date: 2019-11-30 14:48:48
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-30 14:56:51
+ * @LastEditTime: 2019-11-30 16:04:51
  * @Description: header
- * @FilePath: \DataStructures_C\chapter3\test3_3_swap.c
+ * @FilePath: \DataStructures_C\chapter3\test3_12.c
  */
 
 #include <stdio.h>
@@ -65,18 +65,7 @@ void printList(List list)
         printf("%d ",position->element);
         position = position->next;
     }
-    printf("\n");
-}
-
-void Swap(List list, Position beforep)
-{
-    Position p, afterp;
-    p = beforep->next;
-    afterp = p->next;
-
-    p->next = afterp->next;
-    beforep->next = afterp;
-    afterp->next = p;
+    printf("\n");  
 }
 
 void deleteList(List list)
@@ -96,6 +85,27 @@ void deleteList(List list)
     }
 }
 
+/**
+ * @description: 倒着生成list,先NULL，...，最后Hearder,话说CSDN上一些操作的链表是不带表头的，注意修改
+ * @param {type} 
+ * @return: 
+ */
+List reverseList(List list)
+{
+    Position p, tmp;
+    List newlist = creatList();
+    // 跳过表头
+    p = list->next;
+    while(p != NULL)
+    {
+        tmp = p;
+        p = p->next;
+        tmp->next = newlist->next;
+        newlist->next = tmp;
+    }
+    return newlist;
+}
+
 int main()
 {
     List list;
@@ -105,7 +115,7 @@ int main()
         Insert(list,i);
     }
     printList(list);
-    Swap(list, list->next->next);
+    list = reverseList(list);
     printList(list);
     deleteList(list);
     return 0;
