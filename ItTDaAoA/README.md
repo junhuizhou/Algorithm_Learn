@@ -5,8 +5,9 @@
 ### 文件命名规范
 
 1. 一章一个chapter文件夹，eg:chapter1
-2. 每个程序的命名根据书中命名，书中无名则按照图号命名
-3. test文件命名，每个test对应书中每个exercise，eg:0106gcd为sections01_exercise06_functiongcd
+2. 一节一个section文件夹，eg:section1.1
+3. 每个程序的命名根据书中命名，书中无名则按照图号命名
+4. test文件命名，每个test对应书中每个exercise，eg:0106gcd为sections01_exercise06_functiongcd
 
 ### 编译规范
 
