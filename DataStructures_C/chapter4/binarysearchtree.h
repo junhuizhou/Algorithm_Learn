@@ -2,13 +2,13 @@
  * @Author: junhuizhou
  * @Date: 2019-12-02 21:52:45
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-03 15:07:08
+ * @LastEditTime: 2019-12-03 22:31:09
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\binarysearchtree.h
  */
 
-#ifndef DS_CHAPTER4_BINARYSEARCHTREE_H_
-#define DS_CHAPTER4_BINARYSEARCHTREE_H_
+#ifndef DS_CHAP4_BINARYSEARCHTREE_H_
+#define DS_CHAP4_BINARYSEARCHTREE_H_
 
 struct TreeNode;
 typedef struct TreeNode* Position;
