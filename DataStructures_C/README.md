@@ -10,6 +10,13 @@
 ### 编译规范
 
 1. 编译C文件生成可执行文件 gcc name.c -o name.o(win10中使用name.exe)
+2. 链接其他文件，eg:
+
+```
+gcc -c .\binarysearchtree.c .\bstree_test.c
+gcc .\binarysearchtree.o .\bstree_test.o
+.\a.exe
+```
 
 ### setting.json配置
 
