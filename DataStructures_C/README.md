@@ -13,8 +13,7 @@
 2. 链接其他文件，eg:
 
 ```
-gcc -c .\binarysearchtree.c .\bstree_test.c
-gcc .\binarysearchtree.o .\bstree_test.o
+gcc .\binarysearchtree.c .\bstree_test.c
 .\a.exe
 ```
 
