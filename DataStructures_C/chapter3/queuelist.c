@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-26 21:18:38
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-30 20:05:20
+ * @LastEditTime: 2019-12-05 17:04:12
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\queuelist.c
  */
@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include "queuelist.h"
 
-#define MIN_QUEUE_SIZE 5
+/*queue是没有list那种表头的，有元素时front由NULL跳到第一个元素*/
 
 struct Node
 {
@@ -21,37 +21,25 @@ struct Node
 
 struct QueueRecord
 {
-    int size;
     QueueNode front;
     QueueNode rear;
 };
 
 int isEmpty(Queue queue)
 {
-    return queue->size == 0;
+    return queue->front == NULL;
 }
 
-Queue createQueue(int maxelements)
+Queue createQueue()
 {
     Queue queue;
-    if(maxelements < MIN_QUEUE_SIZE)
-    {
-        printf("Queue size is too small\n");
-        exit(1);
-    }
     queue = malloc(sizeof(struct QueueRecord));
     if(queue == NULL)
     {
         printf("Out of memory\n");
         exit(1);
     }
-    queue->front = malloc(sizeof(struct Node));
-    if(queue->front == NULL)
-    {
-        printf("Out of memory\n");
-        exit(1);
-    }
-    makeEmpty(queue);
+    queue->front = queue->rear = NULL;
     return queue;
 }
 
@@ -65,35 +53,49 @@ void makeEmpty(Queue queue)
     else
     {
         QueueNode p, tmp;
+        p = queue->front;
         while(!isEmpty(queue))
         {
-            p = queue->front->next;
             tmp = p;
             p = p->next;
             free(tmp);
         }
     }
-    queue->front->next = NULL;
-    queue->rear = queue->front;
-    queue->size = 0;
+    queue->front = queue->rear = NULL;
 }
 
 void disposeQueue(Queue queue)
 {
-    makeEmpty(queue);
-    free(queue->front);
-    free(queue);
+    if(queue != NULL)
+    {
+        makeEmpty(queue);
+        free(queue);
+    }
 }
 
 void Enqueue(ElementType x, Queue queue)
 {
     QueueNode tmp;
     tmp = malloc(sizeof(struct Node));
+    if(tmp == NULL)
+    {
+        printf("Out of memory\n");
+    }
     tmp->element = x;
     tmp->next = NULL;
-    queue->size++;
-    queue->rear->next = tmp;    // 先将tmp连到队尾，
-    queue->rear = tmp;          // 然后再移动队尾指针到新队尾
+    if(queue->front == NULL)
+    {
+        queue->front = tmp;
+    }
+    if(queue->rear == NULL)
+    {
+        queue->rear = tmp;
+    }
+    else
+    {
+        queue->rear->next = tmp;    // 先将tmp连到队尾，
+        queue->rear = tmp;          // 然后再移动队尾指针到新队尾
+    }
 }
 
 ElementType Front(Queue queue)
@@ -105,7 +107,7 @@ ElementType Front(Queue queue)
     }
     else
     {
-        return queue->front->next->element;
+        return queue->front->element;
     }    
 }
 
@@ -119,14 +121,16 @@ void Dequeue(Queue queue)
     else
     {
         QueueNode tmp;
-        tmp = queue->front->next;
+        tmp = queue->front;
         if(tmp == queue->rear)
         {
-            queue->rear = queue->front;
+            queue->front = queue->rear = NULL;
         }
-        queue->front->next = tmp->next;
+        else
+        {
+            queue->front = tmp->next;
+        }
         free(tmp);
-        queue->size--;
     }
 }
 
@@ -139,7 +143,7 @@ ElementType frontAndDequeue(Queue queue)
     }
     else
     {
-        ElementType tmp = queue->front->next->element;
+        ElementType tmp = queue->front->element;
         Dequeue(queue);
         return tmp;
     }

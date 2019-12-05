@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 11:12:01
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-29 21:15:21
+ * @LastEditTime: 2019-12-05 14:31:19
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\list.c
  */
@@ -121,4 +121,21 @@ Position Advance(Position position)
 ElementType Retrieve(Position position)
 {
     return position->element;
+}
+
+void printList(List list)
+{
+    if(list == NULL)
+    {
+        printf("Empty list\n");
+        return;
+    }
+    Position p;
+    p = list->next;
+    while(p != NULL)
+    {
+        printf("%d ", p->element);
+        p = p->next;
+    }
+    printf("\n");
 }

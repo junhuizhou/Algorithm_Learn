@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 17:21:20
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-24 18:23:05
+ * @LastEditTime: 2019-12-05 14:49:33
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\cursor.h
  */
@@ -26,10 +26,10 @@ void Delete(ElementType x, List list);
 Position findPrevious(ElementType x, const List list);
 void Insert(ElementType x, List list, Position position);
 void deleteList(List list);
-// private?
 Position Header(const List list);
 Position First(const List list);
 Position Advance(const Position position);
 ElementType Retrieve(const Position position);
+void printList(const List list);
 
 #endif

@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 11:12:07
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-24 18:23:23
+ * @LastEditTime: 2019-12-05 14:33:02
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\list.h
  */
@@ -24,10 +24,10 @@ void Delete(ElementType x, List list);
 Position findPrevious(ElementType x, List list);
 void Insert(ElementType x, List list, Position position);
 void deleteList(List list);
-// private?
 Position Header(List list);
 Position First(List list);
 Position Advance(Position position);
 ElementType Retrieve(Position position);
+void printList(List list);
 
 #endif

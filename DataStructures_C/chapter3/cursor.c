@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 17:21:32
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-28 17:18:07
+ * @LastEditTime: 2019-12-05 15:26:38
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\cursor.c
  */
@@ -120,6 +120,7 @@ void Insert(ElementType x, List list, Position position)
     cursorspace[tmpcell].next = cursorspace[position].next;
     cursorspace[position].next = tmpcell;
 }
+
 void deleteList(List list)
 {
     Position p, tmp;
@@ -151,4 +152,21 @@ Position Advance(Position position)
 ElementType Retrieve(Position position)
 {
     return cursorspace[position].element;
+}
+
+void printList(List list)
+{
+    if(list == 0)
+    {
+        printf("Empty list\n");
+        return;
+    }
+    Position p;
+    p = cursorspace[list].next;
+    while(p != 0)
+    {
+        printf("%d ", cursorspace[p].element);
+        p = cursorspace[p].next;
+    }
+    printf("\n");
 }

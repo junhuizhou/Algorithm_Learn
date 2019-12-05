@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-26 21:18:46
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-26 21:39:00
+ * @LastEditTime: 2019-12-05 15:54:31
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\queuelist.h
  */
@@ -12,12 +12,12 @@
 
 struct Node;
 struct QueueRecord;
-typedef struct QueueRecord *Queue;
-typedef struct Node *QueueNode;
+typedef struct QueueRecord* Queue;
+typedef struct Node* QueueNode;
 typedef int ElementType;
 
 int isEmpty(Queue queue);
-Queue createQueue(int maxelements);
+Queue createQueue();
 void makeEmpty(Queue queue);
 void disposeQueue(Queue queue);
 void Enqueue(ElementType x, Queue queue);
