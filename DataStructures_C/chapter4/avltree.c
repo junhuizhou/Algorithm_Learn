@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-04 15:36:48
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-04 20:01:17
+ * @LastEditTime: 2019-12-08 19:43:21
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\avltree.c
  */
@@ -102,7 +102,7 @@ static int Max(int leftheight, int rightheight)
 }
 
 /**
- * @description: 由插入左外点引起不平衡的单旋转
+ * @description: 由左外点引起不平衡的单旋转
  * @param Position 不平衡节点alpha
  * @return: Position 替代alpha的新节点，为原儿子
  */
@@ -114,13 +114,13 @@ static Position singleRotateWithLeft(Position k2)
     k2->left = k1->right;
     k1->right = k2;
     /*更新height*/
-    k2->height = Max(Height(k2->left),Height(k2->right));
-    k1->height = Max(Height(k1->left),k2->height);
+    k2->height = Max(Height(k2->left),Height(k2->right)) + 1;
+    k1->height = Max(Height(k1->left),k2->height) + 1;
     return k1;
 }
 
 /**
- * @description: 由插入右外点引起不平衡的单旋转
+ * @description: 由右外点引起不平衡的单旋转
  * @param Position 不平衡节点alpha 
  * @return: Position 替代alpha的新节点，为原儿子
  */
@@ -132,13 +132,13 @@ static Position singleRotateWithRight(Position k1)
     k1->right = k2->left;
     k2->left = k1;
     /*更新height*/
-    k1->height = Max(Height(k1->left),Height(k1->right));
-    k2->height = Max(Height(k2->right),k1->height);
+    k1->height = Max(Height(k1->left),Height(k1->right)) + 1;
+    k2->height = Max(Height(k2->right),k1->height) + 1;
     return k2;
 }
 
 /**
- * @description: 由插入左内点引起不平衡的双旋转
+ * @description: 由左内点引起不平衡的双旋转
  * @param Position 不平衡节点alpha 
  * @return: Position 替代alpha的新节点，为原孙子
  */
@@ -151,7 +151,7 @@ static Position doubleRotateWithLeft(Position k3)
 }
 
 /**
- * @description: 由插入右内点引起不平衡的双旋转
+ * @description: 由右内点引起不平衡的双旋转
  * @param Position 不平衡节点alpha 
  * @return: Position 替代alpha的新节点，为原孙子
  */
@@ -207,7 +207,7 @@ AvlTree Insert(ElementType x, AvlTree tree)
         if(Height(tree->right)-Height(tree->left) == 2)
         {
             /*判断失衡的插入类型*/
-            if(x < tree->right->element)
+            if(x > tree->right->element)
             {
                 tree = singleRotateWithRight(tree);
             }
@@ -222,11 +222,16 @@ AvlTree Insert(ElementType x, AvlTree tree)
         printf("do not insert the value that exit\n");
     }
 
-    tree->height = Max(Height(tree->left),Height(tree->right));
+    tree->height = Max(Height(tree->left), Height(tree->right)) + 1;
     return tree;
 }
 
-AvlTree Delete(ElementType x, AvlTree tree) //还没写平衡
+/**
+ * @description: 这个版本还是有问题，网上常有，估计还是没有平衡
+ * @param {type} 
+ * @return: 
+ */
+AvlTree Delete(ElementType x, AvlTree tree)
 {
     Position tmpcell;
     if(tree == NULL)
@@ -236,38 +241,99 @@ AvlTree Delete(ElementType x, AvlTree tree) //还没写平衡
     else if(x < tree->element)
     {
         tree->left = Delete(x, tree->left);
+        /*删完左边，看看右边是否比左边高太多*/
+        if(Height(tree->right)-Height(tree->left) == 2)
+        {
+            tmpcell = tree->right;
+            if(Height(tmpcell->left) > Height(tmpcell->right))
+            {
+                tree = doubleRotateWithRight(tree);
+            }
+            else
+            {
+                tree = singleRotateWithRight(tree);
+            }
+        }
     }
     else if(x > tree->element)
     {
         tree->right = Delete(x, tree->right);
+        /*删完右边，看看左边是否比右边高太多*/
+        if(Height(tree->left)-Height(tree->right) == 2)
+        {
+            tmpcell = tree->left;
+            if(Height(tmpcell->left) < Height(tmpcell->right))
+            {
+                tree = doubleRotateWithLeft(tree);
+            }
+            else
+            {
+                tree = singleRotateWithLeft(tree);
+            }
+        }
     }
     else
     {
         if(tree->left && tree->right)   /* two children */
         {
-            tmpcell = findMin(tree->right);
-            tree->element = tmpcell->element;
-            tree->right = Delete(tree->element, tree->right);
+            /*不平衡的删除方案*/
+            // tmpcell = findMin(tree->right);
+            // tree->element = tmpcell->element;
+            // tree->right = Delete(tree->element, tree->right);
+
+            /*据说这样删除，删除后仍然是平衡的*/
+            if(Height(tree->left) > Height(tree->right))
+            {
+                tmpcell = findMax(tree->left);
+                tree->element = tmpcell->element;
+                tree->left = Delete(tmpcell->element, tree->left);
+            }
+            else
+            {
+                tmpcell = findMin(tree->right);
+                tree->element = tmpcell->element;
+                tree->right = Delete(tmpcell->element, tree->right);
+            }
         }
         else                            /* one or zero children */
         {
             tmpcell = tree;
-            if(tree->left == NULL)
-            {
-                tree = tree->right;
-            }
-            else if(tree->right == NULL)
-            {
-                tree = tree->left;
-            }
+            /*一般写法*/
+            // if(tree->left == NULL)
+            // {
+            //     tree = tree->right;
+            // }
+            // else if(tree->right == NULL)
+            // {
+            //     tree = tree->left;
+            // }
+
+            /*简写*/
+            tree = tree->left ? tree->left:tree->right;
             free(tmpcell);
         }
     }
     
+    // tree->height = Max(Height(tree->left), Height(tree->right)) + 1;
     return tree;
 }
 
 ElementType Retrieve(Position position)
 {
     return position->element;
+}
+
+/**
+ * @description: 之后写一个树状显示的版本
+ * @param {type} 
+ * @return: 
+ */
+void printTree(AvlTree tree)
+{
+    if(tree != NULL)
+    {
+        printTree(tree->left);
+        printf("%d ", tree->element);
+        printTree(tree->right);
+    }
 }

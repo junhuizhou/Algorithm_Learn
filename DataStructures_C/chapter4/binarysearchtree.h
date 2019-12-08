@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-02 21:52:45
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-03 22:31:09
+ * @LastEditTime: 2019-12-07 21:20:04
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\binarysearchtree.h
  */
@@ -22,5 +22,6 @@ Position findMax(SearchTree tree);
 SearchTree Insert(ElementType x, SearchTree tree);
 SearchTree Delete(ElementType x, SearchTree tree);
 ElementType Retrieve(Position position);
+void printTree(SearchTree tree);
 
 #endif

@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-02 21:52:58
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-03 15:36:23
+ * @LastEditTime: 2019-12-07 21:18:39
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\binarysearchtree.c
  */
@@ -164,4 +164,14 @@ SearchTree Delete(ElementType x, SearchTree tree)
 ElementType Retrieve(Position position)
 {
     return position->element;
+}
+
+void printTree(SearchTree tree)
+{
+    if(tree != NULL)
+    {
+        printTree(tree->left);
+        printf("%d ", tree->element);
+        printTree(tree->right);
+    }
 }

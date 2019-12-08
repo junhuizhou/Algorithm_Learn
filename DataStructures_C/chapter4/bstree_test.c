@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-03 15:37:30
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-03 16:09:17
+ * @LastEditTime: 2019-12-07 21:38:43
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\bstree_test.c
  */
@@ -25,6 +25,9 @@ int main()
         if( (p=Find(i,tree)) == NULL || Retrieve(p) != i )
             printf( "Error at %d\n", i );
 
+    printTree(tree);
+    printf("\n");
+
     for( i=0; i<50; i+=2 )
         tree = Delete(i, tree);
 
@@ -39,5 +42,10 @@ int main()
     printf("Min is %d, Max is %d\n", Retrieve(findMin(tree)),
                Retrieve(findMax(tree)) );
 
+    if(makeEmpty(tree) == NULL)
+    {
+        printf("Finish destory\n");
+    }
+    
     return 0;
 }

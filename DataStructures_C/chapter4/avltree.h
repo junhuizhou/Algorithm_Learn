@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-04 15:36:59
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-04 15:47:05
+ * @LastEditTime: 2019-12-07 21:20:40
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\avltree.h
  */
@@ -22,5 +22,6 @@ Position findMax(AvlTree tree);
 AvlTree Insert(ElementType x, AvlTree tree);
 AvlTree Delete(ElementType x, AvlTree tree);
 ElementType Retrieve(Position position);
+void printTree(AvlTree tree);
 
 #endif
