@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-04 15:36:48
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-08 19:43:21
+ * @LastEditTime: 2019-12-10 22:34:09
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\avltree.c
  */
@@ -138,9 +138,9 @@ static Position singleRotateWithRight(Position k1)
 }
 
 /**
- * @description: 由左内点引起不平衡的双旋转
+ * @description: 由左内点引起不平衡的两个单旋转
  * @param Position 不平衡节点alpha 
- * @return: Position 替代alpha的新节点，为原孙子
+ * @return: Position 替代alpha的新节点，为原孙子k2
  */
 static Position doubleRotateWithLeft(Position k3)
 {
@@ -151,9 +151,9 @@ static Position doubleRotateWithLeft(Position k3)
 }
 
 /**
- * @description: 由右内点引起不平衡的双旋转
+ * @description: 由右内点引起不平衡的两个单旋转
  * @param Position 不平衡节点alpha 
- * @return: Position 替代alpha的新节点，为原孙子
+ * @return: Position 替代alpha的新节点，为原孙子k2
  */
 static Position doubleRotateWithRight(Position k1)
 {
@@ -161,6 +161,58 @@ static Position doubleRotateWithRight(Position k1)
     k1->right = singleRotateWithLeft(k1->right);
     /*单旋转k1和k2*/
     return singleRotateWithRight(k1);
+}
+
+/**
+ * @description: 由左内点引起不平衡的双旋转
+ * @param Position 不平衡节点alpha 
+ * @return: Position 替代alpha的新节点，为原孙子k2
+ */
+static Position doubleRotateWithLeft2(Position k3)
+{
+    /*k1为儿子，k2为孙子*/
+    Position k1, k2;
+    k1 = k3->left;
+    k2 = k1->right;
+    /*第一次旋转*/
+    k1->right = k2->left;
+    k3->left = k2->right;
+    /*第二次旋转*/
+    k2->left = k1;
+    k2->right = k3;
+    /*更新枝高度*/
+    k1->height = Max(Height(k1->left),Height(k1->right)) + 1;
+    k3->height = Max(Height(k3->left),Height(k3->right)) + 1;
+    /*更新根高度*/
+    k2->height = Max(k1->height,k3->height) + 1;
+
+    return k2;  //书配答案为k3，没搞懂
+}
+
+/**
+ * @description: 由右内点引起不平衡的双旋转
+ * @param Position 不平衡节点alpha 
+ * @return: Position 替代alpha的新节点，为原孙子k2
+ */
+static Position doubleRotateWithRight2(Position k1)
+{
+    /*k2为孙子，k3为儿子*/
+    Position k2, k3;
+    k3 = k1->right;
+    k2 = k3->left;
+    /*第一次旋转*/
+    k3->left = k2->right;
+    k1->right = k2->left;
+    /*第二次旋转*/
+    k2->left = k1;
+    k2->right = k3;
+    /*更新枝高度*/
+    k1->height = Max(Height(k1->left),Height(k1->right)) + 1;
+    k3->height = Max(Height(k3->left),Height(k3->right)) + 1;
+    /*更新根高度*/
+    k2->height = Max(k1->height,k3->height) + 1;
+
+    return k2;  //书配答案为k3，没搞懂
 }
 
 /* **********static end********** */
