@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-04 15:36:48
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-10 22:34:09
+ * @LastEditTime: 2019-12-11 14:36:19
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\avltree.c
  */
@@ -389,3 +389,39 @@ void printTree(AvlTree tree)
         printTree(tree->right);
     }
 }
+
+/* **********Exercise 4.30********** */
+/* **********func start********** */
+static AvlTree genTree(int height, int* lastnode)
+{
+    AvlTree tree;
+    if(height >= 0)
+    {
+        tree = malloc(sizeof(struct AvlNode));
+        if(tree == NULL)
+        {
+            printf("Out of memory\n");
+            exit(1);
+        }
+        tree->left = genTree(height-1, lastnode);
+        tree->element = ++*lastnode;
+        tree->right = genTree(height-2, lastnode);
+        return tree;
+    }
+    else
+    {
+        return NULL;
+    }
+}
+
+/**
+ * @description: 生成最少节点，高度为height的AVL树
+ * @param {type} 
+ * @return: 
+ */
+AvlTree minAvlTree(int height)
+{
+    int lastnodeassigned = 0;
+    return genTree(height, &lastnodeassigned);
+}
+/* **********func end********** */
