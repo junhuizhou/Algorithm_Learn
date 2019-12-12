@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-26 20:12:00
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-28 17:06:32
+ * @LastEditTime: 2019-12-12 19:04:33
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\queuearray.c
  */
@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include "queuearray.h"
 
-#define MIN_QUEUE_SIZE 5
+#define MIN_QUEUE_SIZE (5)
 
 struct QueueRecord
 {

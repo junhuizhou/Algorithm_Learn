@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-27 16:46:22
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-28 16:11:07
+ * @LastEditTime: 2019-12-12 19:05:39
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\test3_2_printlots.c
  */
@@ -110,7 +110,7 @@ void deleteList(List list)
 
 int main()
 {
-    #define n 10
+    #define n (10)
     int a[5] = {1,2,6,7,9};
     List list1, list2;
     list1 = creatList();

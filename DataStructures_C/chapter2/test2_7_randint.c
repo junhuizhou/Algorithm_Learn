@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-21 20:00:56
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-22 20:46:41
+ * @LastEditTime: 2019-12-12 19:03:58
  * @Description: header
  * @FilePath: \DataStructures_C\chapter2\test2_7_randint.c
  */
@@ -29,7 +29,7 @@ void swap(int* a, int* b)
 
 int main()
 {
-    #define num 100000
+    #define num (100000)
     int A[num];
     int i;
     clock_t begin,end;

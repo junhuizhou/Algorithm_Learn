@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-21 10:31:17
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-23 16:27:10
+ * @LastEditTime: 2019-12-12 19:03:41
  * @Description: header
  * @FilePath: \DataStructures_C\chapter2\maxsubsequencesum.c
  */
@@ -148,7 +148,7 @@ int maxSubsequenceSum4(const int a[], int n)
 int main()
 {
     clock_t begin,end;
-    #define n 1000
+    #define n (1000)
     int a[n];
     srand((int)time(0));
     for(int i=0; i<n; i++)

@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-30 18:33:28
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-30 20:42:11
+ * @LastEditTime: 2019-12-12 19:05:18
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\test3_15_selfadjustarray.c
  */
@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MIN_SIZE 5
+#define MIN_SIZE (5)
 typedef struct Record * SelfAdjust;
 typedef int ElementType;
 typedef int Position;
@@ -111,7 +111,7 @@ void deleteList(SelfAdjust s)
 
 int main()
 {
-    #define n 60
+    #define n (60)
     SelfAdjust s = creatList(n);
     for(int i=0; i<10; i++)
     {

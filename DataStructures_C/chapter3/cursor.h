@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 17:21:20
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-05 14:49:33
+ * @LastEditTime: 2019-12-12 19:04:10
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\cursor.h
  */
@@ -15,7 +15,7 @@ typedef int PtrToNode;
 typedef PtrToNode List;         // List是表头，也指整个表
 typedef PtrToNode Position;     // Position是一个Node，在表中移动
 typedef int ElementType;
-#define spacesize 100
+#define spacesize (100)
 
 void initializeCursorSpace(void);
 List makeEmpty(List list);

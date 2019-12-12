@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-22 20:07:49
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-23 16:17:38
+ * @LastEditTime: 2019-12-12 19:03:49
  * @Description: header
  * @FilePath: \DataStructures_C\chapter2\test2_12_subsequence.c
  */
@@ -99,7 +99,7 @@ int maxSubsequenceMul(const int a[], int n)
 int main()
 {
     clock_t begin,end;
-    #define n 100000
+    #define n (100000)
     int a[n];
     srand((int)time(0));
     for(int i=0; i<n; i++)

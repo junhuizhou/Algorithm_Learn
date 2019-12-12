@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 21:20:17
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-29 21:59:00
+ * @LastEditTime: 2019-12-12 19:04:51
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\stackarray.c
  */
@@ -11,8 +11,8 @@
 #include <stdlib.h>
 #include "stackarray.h"
 
-#define EMPTY_ST -1 
-#define MIN_STACK_SIZE 5
+#define EMPTY_ST (-1) 
+#define MIN_STACK_SIZE (5)
 
 struct StackRecord
 {
