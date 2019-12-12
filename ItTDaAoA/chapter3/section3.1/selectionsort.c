@@ -2,13 +2,12 @@
  * @Author: junhuizhou
  * @Date: 2019-12-09 14:39:34
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-09 15:12:56
+ * @LastEditTime: 2019-12-12 20:24:12
  * @Description: header
  * @FilePath: \ItTDaAoA\chapter3\section3.1\selectionsort.c
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
 int randInt(int min, int max)
@@ -17,7 +16,7 @@ int randInt(int min, int max)
     return rand()%(max-min+1) + min;
 }
 
-void swap(int* a, int* b)
+void Swap(int* a, int* b)
 {
     int tmp;
     tmp = *a;
@@ -43,7 +42,7 @@ void selectionSort(int array[], int len)
                 minpos = j;
             }
         }
-        swap(&array[minpos], &array[i]);
+        Swap(&array[minpos], &array[i]);
     }
 }
 
@@ -51,7 +50,7 @@ int main()
 {
     clock_t begin,end;
     /*乱序数组生成*/
-    #define num 50
+    #define num (50)
     int A[num];
     int i;
     for(i=0; i<num; i++)
@@ -60,7 +59,7 @@ int main()
     }
     for(i=1; i<num; i++)
     {
-        swap(&A[i], &A[randInt(0, i)]);
+        Swap(&A[i], &A[randInt(0, i)]);
     }
     /*打印数组*/
     for(i=0; i<num; i++)

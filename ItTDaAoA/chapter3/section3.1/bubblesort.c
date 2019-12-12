@@ -2,13 +2,12 @@
  * @Author: junhuizhou
  * @Date: 2019-12-09 14:39:49
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-09 15:18:16
+ * @LastEditTime: 2019-12-12 20:25:16
  * @Description: header
  * @FilePath: \ItTDaAoA\chapter3\section3.1\bubblesort.c
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
 int randInt(int min, int max)
@@ -17,7 +16,7 @@ int randInt(int min, int max)
     return rand()%(max-min+1) + min;
 }
 
-void swap(int* a, int* b)
+void Swap(int* a, int* b)
 {
     int tmp;
     tmp = *a;
@@ -39,7 +38,7 @@ void bubbleSort(int array[], int len)
         {
             if(array[j+1] < array[j])
             {
-                swap(&array[j+1], &array[j]);
+                Swap(&array[j+1], &array[j]);
             }
         }
     }
@@ -49,7 +48,7 @@ int main()
 {
     clock_t begin,end;
     /*乱序数组生成*/
-    #define num 50
+    #define num (50)
     int A[num];
     int i;
     for(i=0; i<num; i++)
@@ -58,7 +57,7 @@ int main()
     }
     for(i=1; i<num; i++)
     {
-        swap(&A[i], &A[randInt(0, i)]);
+        Swap(&A[i], &A[randInt(0, i)]);
     }
     /*打印数组*/
     for(i=0; i<num; i++)
@@ -67,7 +66,7 @@ int main()
     }
     printf("\n");
     begin = clock();
-    /*选择排序*/
+    /*冒泡排序*/
     bubbleSort(A, num);
     /*运行时间*/
     end = clock();

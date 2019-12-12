@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-09 16:49:58
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-09 17:02:36
+ * @LastEditTime: 2019-12-12 20:23:25
  * @Description: header
  * @FilePath: \Algorithm_Learn\ItTDaAoA\chapter3\section3.2\stringmatch.c
  */
@@ -16,8 +16,8 @@
  */
 int main()
 {
-    #define n 18
-    #define m 3
+    #define n (18)
+    #define m (3)
     char text[n+1] = "NOBODY_NOTICED_HIM";
     char pattern[m+1] = "NOT";
     int i,j;
