@@ -62,6 +62,8 @@ gcc .\binarysearchtree.c .\bstree_test.c
 
 个人改动：
 1. 函数命名，单个单词的名字首字母大写，多个单词的名字首单词小写
+2. 特殊情况：约定俗成的大小写比如人名等
+3. #define SIZE (num)
 
 ### 部分首尾注释模板
 
