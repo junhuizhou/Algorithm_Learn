@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-26 20:12:00
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-12 19:04:33
+ * @LastEditTime: 2019-12-15 21:15:45
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\queuearray.c
  */
@@ -43,13 +43,13 @@ Queue createQueue(int maxelements)
     queue = malloc(sizeof(struct QueueRecord));
     if(queue == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!\n");
         exit(1);
     }
     queue->array = malloc(sizeof(ElementType)*maxelements);
     if(queue->array == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!!\n");
         exit(1);
     }
     queue->capacity = maxelements;

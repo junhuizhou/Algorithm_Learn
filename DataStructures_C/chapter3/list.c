@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 11:12:01
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-05 14:31:19
+ * @LastEditTime: 2019-12-15 21:15:25
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\list.c
  */
@@ -26,7 +26,7 @@ List makeEmpty(List list)
     list = malloc(sizeof(struct Node));
     if(list == NULL)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
     }
     list->next = NULL;
     return list;
@@ -83,7 +83,7 @@ void Insert(ElementType x, List list, Position position)
     tmpcell = malloc(sizeof(struct Node));
     if(tmpcell == NULL)
     {
-        printf("Out of memory");
+        printf("Out of memory\n");
     }
     tmpcell->element = x;
     tmpcell->next = position->next;

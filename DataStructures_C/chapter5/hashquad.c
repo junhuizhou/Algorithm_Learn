@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-13 16:36:27
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-15 18:50:49
+ * @LastEditTime: 2019-12-15 21:18:38
  * @Description: header
  * @FilePath: \DataStructures_C\chapter5\hashquad.c
  */
@@ -88,7 +88,7 @@ HashTable initializeTable(int tablesize)
     hashtable = malloc(sizeof(struct HashTbl));
     if(hashtable == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!\n");
         exit(1);
     }
     hashtable->tablesize = nextPrime(tablesize);
@@ -96,7 +96,7 @@ HashTable initializeTable(int tablesize)
     hashtable->thecells = malloc(sizeof(Cell)*hashtable->tablesize);
     if(hashtable->thecells == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!!\n");
         exit(1);
     }
     for(i=0; i<hashtable->tablesize; i++)

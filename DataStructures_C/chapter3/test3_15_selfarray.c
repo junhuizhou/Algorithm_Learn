@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-30 18:33:28
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-12 19:05:18
+ * @LastEditTime: 2019-12-15 21:17:42
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\test3_15_selfadjustarray.c
  */
@@ -31,13 +31,13 @@ SelfAdjust creatList(int space)
     SelfAdjust s = malloc(sizeof(struct Record));
     if(s == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!\n");
         exit(1);
     }
     s->array = malloc(sizeof(ElementType)*space);
     if(s->array == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!!\n");
         exit(1);
     }
     s->capacity = space;

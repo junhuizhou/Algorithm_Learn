@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-28 18:50:37
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-11-29 21:55:00
+ * @LastEditTime: 2019-12-15 21:16:57
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\test3_10_josephus.c
  */
@@ -49,7 +49,7 @@ LoopList insertLoop(LoopList looplist, int n)
         Position tmp = malloc(sizeof(struct Node));
         if(tmp == NULL)
         {
-            printf("Out of memory");
+            printf("Out of memory\n");
             exit(1);
         }
         rear->next = tmp;

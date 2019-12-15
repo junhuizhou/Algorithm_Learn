@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-24 21:20:17
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-12 19:04:51
+ * @LastEditTime: 2019-12-15 21:16:18
  * @Description: header
  * @FilePath: \DataStructures_C\chapter3\stackarray.c
  */
@@ -42,13 +42,13 @@ Stack createStack(int maxelements)
     stack = malloc(sizeof(struct StackRecord));
     if(stack == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!\n");
         exit(1);
     }
     stack->array = malloc(sizeof(ElementType)*maxelements);
     if(stack->array == NULL)
     {
-        printf("Out if memory\n");
+        printf("Out if memory!!\n");
         exit(1);
     }
     stack->capacity = maxelements;
