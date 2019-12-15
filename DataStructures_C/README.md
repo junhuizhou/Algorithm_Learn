@@ -38,9 +38,21 @@ gcc .\binarysearchtree.c .\bstree_test.c
     "fileheader.configObj": {
         "prohibitAutoAdd": [ "json", "md" ] 
     },
-    "files.autoGuessEncoding": true
+    "files.autoGuessEncoding": true,
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "background": "green",
+            "rulerColour": "green",
+            "iconColour": "green",
+            "rulerLane": "full"
+        }
+    }
 }
 ```
+
+### todo tree的配置使用
+
+[高亮添加及调整颜色](https://zhuanlan.zhihu.com/p/63303926)
 
 ### 计算运行时间
 
@@ -72,3 +84,8 @@ gcc .\binarysearchtree.c .\bstree_test.c
 /* **********func start********** */
 /* **********func end********** */
 ```
+
+### TodoLsit
+
+TODO: chapter4添加B树实现
+TODO: chapter5添加扩展列实现
