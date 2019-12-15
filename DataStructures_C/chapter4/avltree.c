@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-04 15:36:48
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-11 14:36:19
+ * @LastEditTime: 2019-12-15 21:33:36
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\avltree.c
  */
@@ -278,11 +278,7 @@ AvlTree Insert(ElementType x, AvlTree tree)
     return tree;
 }
 
-/**
- * @description: 这个版本还是有问题，网上常有，估计还是没有平衡
- * @param {type} 
- * @return: 
- */
+// TODO: 这是未平衡版本Delete
 AvlTree Delete(ElementType x, AvlTree tree)
 {
     Position tmpcell;
@@ -375,12 +371,8 @@ ElementType Retrieve(Position position)
     return position->element;
 }
 
-/**
- * @description: 之后写一个树状显示的版本
- * @param {type} 
- * @return: 
- */
-void printTree(AvlTree tree)
+// TODO: 之后写一个树状打印的版本
+void printTree(AvlTree tree)    
 {
     if(tree != NULL)
     {

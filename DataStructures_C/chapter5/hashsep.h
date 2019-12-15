@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-12 15:57:33
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-12 17:18:10
+ * @LastEditTime: 2019-12-15 21:53:12
  * @Description: header
  * @FilePath: \DataStructures_C\chapter5\hashsep.h
  */
@@ -15,7 +15,7 @@ typedef struct ListNode* Position;
 typedef struct ListNode* List;
 struct HashTbl;
 typedef struct HashTbl* HashTable; 
-typedef int ElementType;    //要是字符串呢？
+typedef int ElementType;    // TODO: 写个typdef char ElementType版本
 typedef unsigned int Index;
 
 HashTable initializeTable(int tablesize);

@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-13 16:36:37
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-15 18:49:48
+ * @LastEditTime: 2019-12-15 21:54:34
  * @Description: header
  * @FilePath: \DataStructures_C\chapter5\hashquad.h
  */
@@ -14,7 +14,7 @@ struct HashTbl;
 typedef struct HashTbl* HashTable;
 typedef unsigned int Index;
 typedef Index Position;
-typedef int ElementType;
+typedef int ElementType;    // TODO: 写个typdef char ElementType版本
 
 HashTable initializeTable(int tablesize);
 HashTable Rehash(HashTable hashtable);

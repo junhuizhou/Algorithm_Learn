@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-02 21:52:58
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-11 20:17:53
+ * @LastEditTime: 2019-12-15 21:37:27
  * @Description: header
  * @FilePath: \DataStructures_C\chapter4\binarysearchtree.c
  */
@@ -342,6 +342,7 @@ void printRange(ElementType lower, ElementType upper, SearchTree tree)
 }
 /* **********func end********** */
 
+// TODO: 以层序打出二叉树节点
 /* **********Exercise 4.35********** */
 /* **********func start********** */
 /**
