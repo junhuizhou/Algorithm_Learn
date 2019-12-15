@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-13 16:36:37
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-13 16:44:44
+ * @LastEditTime: 2019-12-15 18:49:48
  * @Description: header
  * @FilePath: \DataStructures_C\chapter5\hashquad.h
  */
@@ -16,7 +16,7 @@ typedef unsigned int Index;
 typedef Index Position;
 typedef int ElementType;
 
-HashTable intializeTable(int tablesize);
+HashTable initializeTable(int tablesize);
 HashTable Rehash(HashTable hashtable);
 Position Find(ElementType key, HashTable hashtable);
 void Insert(ElementType key, HashTable hashtable);

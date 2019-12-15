@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-13 16:36:27
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-13 17:17:37
+ * @LastEditTime: 2019-12-15 18:50:49
  * @Description: header
  * @FilePath: \DataStructures_C\chapter5\hashquad.c
  */
@@ -35,7 +35,27 @@ struct HashTbl
  */
 static int nextPrime(int num)
 {
-
+    if(num&1 == 0)
+    {
+        num += 1;
+    }
+    int i;
+    int isprime = 0;
+    for(; ; num+=2)
+    {
+        for(i=3; i*i<=num; i+=2)
+        {
+            if(num%i == 0)
+            {
+                isprime = 1;
+                break;
+            }
+        }
+        if(isprime)
+        {
+            return num;
+        }
+    }
 }
 
 /*ElementType == int*/
@@ -54,7 +74,7 @@ static Index Hash(ElementType key, int tablesize)
 //     return hashval % tablesize;
 // }
 
-HashTable intializeTable(int tablesize)
+HashTable initializeTable(int tablesize)
 {
     HashTable hashtable;
     int i;
@@ -95,7 +115,7 @@ HashTable Rehash(HashTable hashtable)
     oldcells = hashtable->thecells;
     oldsize = hashtable->tablesize;
     /*Get a new, empty table*/
-    hashtable = intializeTable(2*oldsize);
+    hashtable = initializeTable(2*oldsize);
     /*Scan through old table, reinserting into new*/
     for(i=0; i<oldsize; i++)
     {

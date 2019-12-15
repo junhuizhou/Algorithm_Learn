@@ -2,13 +2,14 @@
  * @Author: junhuizhou
  * @Date: 2019-12-13 17:18:47
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-13 18:49:25
+ * @LastEditTime: 2019-12-15 18:52:26
  * @Description: header
  * @FilePath: \DataStructures_C\chapter5\hashtest.c
  */
 
 /* Define the appropriate hash algorithm */
-#define SepChain    
+// #define SepChain
+#define QuadProb    
 
 #ifdef SepChain
 #include "hashsep.h"
@@ -34,7 +35,7 @@ int main()
         #ifdef QuadProb
             if(i > currentsize/2)
             {
-                hashtable = ReHash(hashtable);
+                hashtable = Rehash(hashtable);
                 printf("Rehashing...\n");
                 currentsize *= 2;
             }

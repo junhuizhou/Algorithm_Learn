@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-12 15:57:43
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-12 18:57:46
+ * @LastEditTime: 2019-12-15 18:46:12
  * @Description: header
  * @FilePath: \DataStructures_C\chapter5\hashsep.c
  */
@@ -32,7 +32,27 @@ struct HashTbl
  */
 static int nextPrime(int num)
 {
-    
+    if(num&1 == 0)
+    {
+        num += 1;
+    }
+    int i;
+    int isprime = 0;
+    for(; ; num+=2)
+    {
+        for(i=3; i*i<=num; i+=2)
+        {
+            if(num%i == 0)
+            {
+                isprime = 1;
+                break;
+            }
+        }
+        if(isprime)
+        {
+            return num;
+        }
+    }
 }
 
 /*ElementType == int*/
@@ -65,7 +85,7 @@ HashTable initializeTable(int tablesize)
     hashtable = malloc(sizeof(struct HashTbl));
     if(hashtable == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!\n");
         exit(1);
     }
     hashtable->tablesize = nextPrime(tablesize);
@@ -73,16 +93,17 @@ HashTable initializeTable(int tablesize)
     hashtable->thelists = malloc(sizeof(List)*hashtable->tablesize);
     if(hashtable->thelists == NULL)
     {
-        printf("Out of memory\n");
+        printf("Out of memory!!\n");
         exit(1);
     }
     /*Allocate list headers*/
-    hashtable->thelists = malloc(sizeof(struct ListNode)*hashtable->tablesize);
+    // hashtable->thelists = malloc(sizeof(struct ListNode)*hashtable->tablesize);
     for(i=0; i<hashtable->tablesize; i++)
     {
+        hashtable->thelists[i] = malloc(sizeof(struct ListNode));
         if(hashtable->thelists[i] == NULL)
         {
-            printf("Out of memory\n");
+            printf("Out of memory!!!\n");
             exit(1);
         }
         else
