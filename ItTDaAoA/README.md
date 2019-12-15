@@ -40,7 +40,15 @@ gcc .\binarysearchtree.c .\bstree_test.c
     "fileheader.configObj": {
         "prohibitAutoAdd": [ "json", "md" ] 
     },
-    "files.autoGuessEncoding": true
+    "files.autoGuessEncoding": true,
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "background": "green",
+            "rulerColour": "green",
+            "iconColour": "green",
+            "rulerLane": "full"
+        }
+    }
 }
 ```
 
