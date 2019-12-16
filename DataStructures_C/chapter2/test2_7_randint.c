@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-11-21 20:00:56
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-12 19:03:58
+ * @LastEditTime: 2019-12-16 16:08:59
  * @Description: header
  * @FilePath: \DataStructures_C\chapter2\test2_7_randint.c
  */
@@ -10,7 +10,6 @@
 /*test2_7 生成前N个自然数的一个随机置换*/
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
 int randInt(int min, int max)
