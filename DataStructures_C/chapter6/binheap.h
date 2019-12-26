@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-16 14:50:17
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-16 20:24:02
+ * @LastEditTime : 2019-12-26 20:51:09
  * @Description: header
  * @FilePath: \DataStructures_C\chapter6\binheap.h
  */
@@ -20,6 +20,8 @@ PriorityQueue buildHeapByUp(PriorityQueue heap, ElementType array[], int arraysi
 void makeEmpty(PriorityQueue heap);
 void Insert(ElementType x, PriorityQueue heap);
 void Destory(PriorityQueue heap);
+void increaseKey(PriorityQueue heap, int position, ElementType delta);
+void decreaseKey(PriorityQueue heap, int position, ElementType delta);
 ElementType deleteMin(PriorityQueue heap);
 ElementType findMin(PriorityQueue heap);
 int isEmpty(PriorityQueue heap);

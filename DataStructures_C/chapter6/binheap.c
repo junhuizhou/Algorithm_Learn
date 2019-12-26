@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-16 14:50:25
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-16 20:33:28
+ * @LastEditTime : 2019-12-26 22:42:20
  * @Description: header
  * @FilePath: \DataStructures_C\chapter6\binheap.c
  */
@@ -101,6 +101,27 @@ static void percolateDown(ElementType array[], int len, int father)
     array[father] = key;
 }
 
+static void percolateUp(ElementType array[], int len, int child)
+{
+    int key = array[child];
+    int father = child>>1;
+
+    while(father)
+    {
+        if(key < array[father])
+        {
+            array[child] = array[father];
+            child = father;
+            father = child>>1;
+        }
+        else
+        {
+            break;
+        }
+    }
+    array[child] = key;
+} 
+
 PriorityQueue buildHeapByDown(PriorityQueue heap, ElementType array[], int arraysize)
 {
     if(heap == NULL)
@@ -150,6 +171,17 @@ void Destory(PriorityQueue heap)
     /*free对应malloc*/
     free(heap->elements);
     free(heap);
+}
+
+void increaseKey(PriorityQueue heap, int position, ElementType delta)
+{
+    heap->elements[position] += delta;
+    percolateDown(heap->elements, heap->size, position);
+}
+void decreaseKey(PriorityQueue heap, int position, ElementType delta)
+{
+    heap->elements[position] -= delta;
+    percolateUp(heap->elements, heap->size, position);
 }
 
 ElementType deleteMin(PriorityQueue heap)
