@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-17 18:53:17
  * @LastEditor: junhuizhou
- * @LastEditTime: 2019-12-17 19:55:36
+ * @LastEditTime : 2019-12-27 20:43:56
  * @Description: header
  * @FilePath: \DataStructures_C\chapter6\leftheap.h
  */
@@ -20,7 +20,7 @@ ElementType findMin(PriorityQueue heap);
 PriorityQueue Merge(PriorityQueue heap1, PriorityQueue heap2);
 
 #define Insert(x, heap) (heap = Insert1((x), heap))
-// TODO: define deletMin
+#define deleteMin(heap) (heap = deleteMin1(heap))
 PriorityQueue Inser1(ElementType x, PriorityQueue heap);
 PriorityQueue deleteMin1(PriorityQueue heap);
 

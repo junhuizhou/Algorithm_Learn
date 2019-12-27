@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-16 14:50:25
  * @LastEditor: junhuizhou
- * @LastEditTime : 2019-12-26 22:42:20
+ * @LastEditTime : 2019-12-27 20:20:24
  * @Description: header
  * @FilePath: \DataStructures_C\chapter6\binheap.c
  */
@@ -234,6 +234,13 @@ ElementType findMin(PriorityQueue heap)
     }
 }
 
+ElementType Delete(PriorityQueue heap, int position)
+{
+    int delta = heap->elements[position] - heap->elements[1] + 1;
+    decreaseKey(heap, position, delta);
+    return deleteMin(heap);
+}
+
 int isEmpty(PriorityQueue heap)
 {
     return heap->size == 0;
@@ -266,3 +273,25 @@ void printHeap(PriorityQueue heap)
         printf("\n");
     }
 }
+
+/* **********Exercise 6.9********** */
+/* **********func start********** */
+/**
+ * @description: print all key that less than x
+ * @algorithm: 对堆进行前序遍历，把堆当做数组就好
+ * @param {type} 
+ * @return: 
+ */
+void printLessX(PriorityQueue heap, ElementType x)
+{
+    int i = 0;
+    while(i++ < heap->size)
+    {
+        if(heap->elements[i] < x)
+        {
+            printf("%d ", heap->elements[i]);
+        }
+    }
+    printf("\n");
+}
+/* **********func end********** */

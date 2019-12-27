@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-26 20:21:43
  * @LastEditor: junhuizhou
- * @LastEditTime : 2019-12-26 22:38:27
+ * @LastEditTime : 2019-12-27 20:22:16
  * @Description: header
  * @FilePath: \DataStructures_C\chapter6\test6_5_change.c
  */
@@ -25,6 +25,9 @@ int main()
     printHeap(heap);
 
     decreaseKey(heap, 14, 9);
+    printHeap(heap);
+
+    printf("delete: %d\n", Delete(heap,8));
     printHeap(heap);
 
     Destory(heap);

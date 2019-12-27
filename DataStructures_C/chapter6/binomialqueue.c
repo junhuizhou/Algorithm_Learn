@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-18 16:00:57
  * @LastEditor: junhuizhou
- * @LastEditTime : 2019-12-18 16:10:12
+ * @LastEditTime : 2019-12-27 21:25:47
  * @Description: header
  * @FilePath: \DataStructures_C\chapter6\binomialqueue.c
  */
@@ -94,6 +94,7 @@ BinQueue Insert(ElementType x, BinQueue heap)
 
     return Merge(heap, oneitem);
 }
+
 static BinTree combineTrees(BinTree tree1, BinTree tree2)
 {
     if(tree1->element > tree2->element)
