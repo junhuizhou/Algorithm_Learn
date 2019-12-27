@@ -24,6 +24,7 @@ gcc .\binarysearchtree.c .\bstree_test.c
     "explorer.confirmDelete": false,
 	"fileheader.cursorMode": {
         "description": "",
+        "algorithm": "",
         "param": "",
         "return": ""
     },
@@ -90,3 +91,5 @@ gcc .\binarysearchtree.c .\bstree_test.c
 TODO: chapter4添加B树实现
 
 TODO: chapter5添加扩展列实现
+
+TODO: chapter6添加最小最大堆实现
