@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2019-12-16 14:50:25
  * @LastEditor: junhuizhou
- * @LastEditTime : 2019-12-27 20:20:24
+ * @LastEditTime : 2020-01-05 20:05:49
  * @Description: header
  * @FilePath: \DataStructures_C\chapter6\binheap.c
  */
@@ -178,6 +178,7 @@ void increaseKey(PriorityQueue heap, int position, ElementType delta)
     heap->elements[position] += delta;
     percolateDown(heap->elements, heap->size, position);
 }
+
 void decreaseKey(PriorityQueue heap, int position, ElementType delta)
 {
     heap->elements[position] -= delta;
