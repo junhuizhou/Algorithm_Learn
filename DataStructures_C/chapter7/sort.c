@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2020-01-05 16:12:38
  * @LastEditor: junhuizhou
- * @LastEditTime : 2020-01-06 10:56:42
+ * @LastEditTime : 2020-01-06 15:46:33
  * @Description: header
  * @FilePath: \DataStructures_C\chapter7\sort.c
  */
@@ -58,6 +58,11 @@ void shellSort(ElementType array[], int length)
     ElementType key;
     for(increment=length>>1; increment>0; increment>>=1)
     {
+        //改为Hibbard增量，Sedgewick增量太麻烦了不整了
+        if(increment&1 == 0)
+        {
+            increment++;
+        }
         for(i=increment; i<length; i++)
         {
             key = array[i];
@@ -123,7 +128,7 @@ void heapSort(ElementType array[], int length)
 /* **********func end********** */
 
 /**
- * @description: 合并排序
+ * @description: 归并排序
  * @algorithm: 分而排序，再合并两排好的表
  * @param {type} 
  * @return: 
@@ -191,6 +196,34 @@ void mergeSort(ElementType array[], int length)
         mSort(array, tmparray, 0, length-1);
         free(tmparray);
     }
+}
+
+// 非递归实现
+void mergeSort2(ElementType array[], int length)
+{
+    ElementType* tmparray;
+    int sublistsize, part1start, part2start, part2end;
+    tmparray = malloc(sizeof(ElementType)*length);
+    if(tmparray == NULL)
+    {
+        printf("Out of memory\n");
+        exit(1);
+    }
+    else
+    {
+        for(sublistsize=1; sublistsize<length; sublistsize<<=1)
+        {
+            part1start = 0;
+            while(part1start+sublistsize < length-1)
+            {
+                part2start = part1start+sublistsize;
+                part2end = length < (part2start+sublistsize-1) ? length : (part2start+sublistsize-1);
+                Merge(array, tmparray, part1start, part2start, part2end);
+                part1start = part2end+1;
+            }
+        }
+    }
+    free(tmparray);
 }
 /* **********func end********** */
 

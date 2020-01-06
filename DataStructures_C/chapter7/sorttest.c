@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2020-01-05 16:12:53
  * @LastEditor: junhuizhou
- * @LastEditTime : 2020-01-06 11:36:23
+ * @LastEditTime : 2020-01-06 15:48:29
  * @Description: header
  * @FilePath: \DataStructures_C\chapter7\sorttest.c
  */
@@ -48,6 +48,7 @@ int main()
     // shellSort(A, num);
     // heapSort(A, num);
     // mergeSort(A, num);
+    // mergeSort2(A, num);
     // quickSort(A, num);
     bucketSort(A, num);
     end = clock();
