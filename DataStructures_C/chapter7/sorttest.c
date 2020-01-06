@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2020-01-05 16:12:53
  * @LastEditor: junhuizhou
- * @LastEditTime : 2020-01-05 22:32:00
+ * @LastEditTime : 2020-01-06 11:36:23
  * @Description: header
  * @FilePath: \DataStructures_C\chapter7\sorttest.c
  */
@@ -27,7 +27,7 @@ void swap(int* a, int* b)
 
 int main()
 {
-    #define num (100000)
+    #define num (500000)
     int A[num];
     int i;
 
@@ -48,7 +48,8 @@ int main()
     // shellSort(A, num);
     // heapSort(A, num);
     // mergeSort(A, num);
-    quickSort(A, num);
+    // quickSort(A, num);
+    bucketSort(A, num);
     end = clock();
     printf("time of this code is %lf ms\n",(double)(end-begin)/CLOCKS_PER_SEC*1000);
     

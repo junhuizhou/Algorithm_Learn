@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2020-01-05 16:12:44
  * @LastEditor: junhuizhou
- * @LastEditTime : 2020-01-05 21:20:00
+ * @LastEditTime : 2020-01-06 10:24:49
  * @Description: header
  * @FilePath: \DataStructures_C\chapter7\sort.h
  */
@@ -17,5 +17,6 @@ void shellSort(ElementType array[], int length);
 void heapSort(ElementType array[], int length);
 void mergeSort(ElementType array[], int length);
 void quickSort(ElementType array[], int length);
+void bucketSort(ElementType array[], int length);
 
 #endif

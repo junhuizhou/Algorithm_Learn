@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2020-01-05 16:12:38
  * @LastEditor: junhuizhou
- * @LastEditTime : 2020-01-05 22:43:58
+ * @LastEditTime : 2020-01-06 10:56:42
  * @Description: header
  * @FilePath: \DataStructures_C\chapter7\sort.c
  */
@@ -265,3 +265,45 @@ void quickSort(ElementType array[], int length)
     qSort(array, 0, length-1);    
 }
 /* **********func end********** */
+
+/**
+ * @description: 桶式排序
+ * @algorithm: 知道array元素都小于某个数的情况下，本题假设元素介于1-length
+ * @param {type} 
+ * @return: 
+ */
+void bucketSort(ElementType array[], int length)
+{
+    ElementType* tmparray;
+    tmparray = malloc(sizeof(ElementType)*(length+1));
+    if(tmparray == NULL)
+    {
+        printf("Out of memory\n");
+        exit(1);
+    }
+    else
+    {
+        /*bucket sorting*/
+        int i = length;
+        int j = 0;
+        while(i)
+        {
+            tmparray[i] = 0;
+            i--;
+        }
+        i = length;
+        while(i--)
+        {
+            tmparray[array[i]] = array[i];
+        }
+        i = 0;
+        while(++i <= length)
+        {
+            if(tmparray[i])
+            {
+                array[j++] = tmparray[i];
+            }
+        }
+        free(tmparray);
+    }
+}
