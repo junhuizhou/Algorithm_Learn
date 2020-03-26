@@ -93,3 +93,7 @@ TODO: chapter4添加B树实现
 TODO: chapter5添加扩展列实现
 
 TODO: chapter6添加最小最大堆实现
+
+TODO: chapter9暂时实现图出来就行了，之后增加算法，太难了
+
+TODO: chapter10先跳过，详细看《算法设计与分析基础》
