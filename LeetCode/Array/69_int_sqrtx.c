@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2021-05-06 19:40:21
  * @LastEditor: junhuizhou
- * @LastEditTime: 2021-05-06 20:42:27
+ * @LastEditTime: 2021-05-06 21:43:43
  * @Description: header
  * @FilePath: \LeetCode\Array\69_int_sqrtx.c
  */
@@ -38,7 +38,7 @@ int mySqrt2(int x)
     if (x == 0)
         return 0;
     double f = x;
-    while (true)
+    while (1)
     {
         double fnext = 0.5 * (f + x/f);
         if (fabs(fnext - f) < 1e-6)

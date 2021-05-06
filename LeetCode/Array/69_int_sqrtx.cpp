@@ -2,13 +2,14 @@
  * @Author: junhuizhou
  * @Date: 2021-05-06 19:40:09
  * @LastEditor: junhuizhou
- * @LastEditTime: 2021-05-06 20:38:21
+ * @LastEditTime: 2021-05-06 21:28:57
  * @Description: header
  * @FilePath: \LeetCode\Array\69_int_sqrtx.cpp
  */
 
 // 返回平方根的整数部分
 
+#include <math.h>
 class Solution {
 public:
     // 二分法
