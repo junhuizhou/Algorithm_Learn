@@ -2,7 +2,7 @@
  * @Author: junhuizhou
  * @Date: 2021-05-13 15:45:05
  * @LastEditor: junhuizhou
- * @LastEditTime: 2021-05-13 16:40:26
+ * @LastEditTime: 2021-05-13 17:15:20
  * @Description: header
  * @FilePath: \LeetCode\Array\59_spiral_matrix_2.cpp
  */
@@ -14,7 +14,8 @@ using std::vector;
 
 class Solution {
 public:
-    vector<vector<int>> generateMatrix(int n) {
+    vector<vector<int>> generateMatrix(int n)
+    {
         vector<vector<int>> result(n, vector<int>(n, 0));
         
         int loop = n / 2;
